@@ -35,9 +35,9 @@ export default function Navbar() {
         {/* Links a la derecha */}
         <ul className="flex gap-6 text-lg font-medium text-white items-center">
           {navItems
-            .filter(item => !item.isLogo)
-            .map(({ name, href }) => (
-              <li key={href}>
+            .filter((item)=> !item.isLogo)
+            .map(({ name, href}, i) => (
+              <li key={i}>
                 <Link
                   href={href}
                   className={`${
