@@ -6,23 +6,27 @@ import Card from "../commons/Card";
 import SectionTitle from "../commons/SectionTitle";
 import { SiGoogleforms } from "react-icons/si";
 
+import imageDoctor from '../../../public/img/medico.jpg'
+
 const AcademicOffer = () =>{
     const academicOffer = ['Carreras', 'Cursos', 'Capacitaciones'];
     const dataCarreras = [
       {
         careerName: "Enfermeria",
-        description: "Licenciatura en auxiliar de enfermeria"
+        description: "Licenciatura en auxiliar de enfermeria",
+        image: imageDoctor
       },
       {
         careerName: "Emergencias y urgencias médicas",
-        description: "Técnico superior en emergencias y urgenc..."
+        description: "Técnico superior en emergencias y urgenc...",
+        image: imageDoctor
       },
       {
         careerName: "Nombre carrera",
-        description: "Grado Academico"
+        description: "Grado Academico",
+        image: imageDoctor
       }
     ]
-
 
     return(
       <>
@@ -50,13 +54,12 @@ const AcademicOffer = () =>{
                 dataCarreras.map((el, ind)=>(
                   <Card
                     key={ind}
-                    careerName={el.careerName}
-                    desc={el.description}
+                    cardTitle={el.careerName}
+                    carDescription={el.description}
+                    cardImage={el.image}
                   />
                 ))
               }
-
-
             </div>
             <div className="relative bg-slate-800">
               <div className="grid place-items-center bg-[url(/img/pattern.svg)] pt-15 pb-15">
