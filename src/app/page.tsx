@@ -1,4 +1,4 @@
-import Image from "next/image";
+
 import Description from "@/components/main/Description";
 import AcademicOffer from "@/components/main/AcademicOffer";
 
@@ -17,11 +17,13 @@ export default function Home() {
         <div className="bg-blue-500 h-90">
           {titlePortait}
         </div>
-
         {/* Body */}
-        <div>
+        <div className="@container">
           <Description/>
           <AcademicOffer/>
+
+
+
         </div>
         
       {/* </main> */}

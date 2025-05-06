@@ -1,4 +1,8 @@
 
+import Image from "next/image";
+
+import logoYeshiva from '../../../public/logoYeshiva.svg'
+
 const AcademicOffer = () =>{
     const academicOffer = ['Carreras', 'Cursos', 'Capacitaciones'];
     return(<>
@@ -8,22 +12,25 @@ const AcademicOffer = () =>{
           <div>
             <div>
               {academicOffer.map((el, id)=>(
-                <a className="mr-5">{el}</a>
+                <a key={id} className="mr-5">{el}</a>
               ))}
             </div>
             <div>
               {/* carrousel */}
             </div>
-            {/* banner */}
-            <div>
-              <h2>FORMA PARTE DE AQUELLOS</h2>
-              <h2>CONQUISTAN SU FUTURO</h2>
+            <div className="bg-[url(/img/pattern.svg)]">
+              <h2 className="text-white text-5xl">FORMA PARTE DE AQUELLOS</h2>
+              <h2 className="text-yellow-200 text-5xl">CONQUISTAN SU FUTURO</h2>
               <a>Aprende, trasciende y empieza a cumplir tus sueños.</a>
-              <button>
+              <button >
                 PLANES Y BECAS
               </button>
-              {/* <Image src={}> */}
-              {/* </Image> */}
+              <Image 
+                width={50}
+                height={50}
+                alt="Picture of the author"
+                src={logoYeshiva}
+              />
             </div>
           </div>
         </div>
