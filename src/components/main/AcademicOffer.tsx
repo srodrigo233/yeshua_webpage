@@ -2,21 +2,60 @@
 import Image from "next/image";
 
 import logoYeshiva from '../../../public/logoYeshiva.svg'
+import Card from "../commons/Card";
+import SectionTitle from "../commons/SectionTitle";
 
 const AcademicOffer = () =>{
     const academicOffer = ['Carreras', 'Cursos', 'Capacitaciones'];
-    return(<>
-        {/* Titulo */}
-        <div> 
-          <h2>OFERTA ACADEMICA</h2>
-          <div>
-            <div>
-              {academicOffer.map((el, id)=>(
-                <a key={id} className="mr-5">{el}</a>
-              ))}
+    const dataCarreras = [
+      {
+        careerName: "Enfermeria",
+        description: "Licenciatura en auxiliar de enfermeria"
+      },
+      {
+        careerName: "Emergencias y urgencias médicas",
+        description: "Técnico superior en emergencias y urgenc..."
+      },
+      {
+        careerName: "Nombre carrera",
+        description: "Grado Academico"
+      }
+    ]
+
+
+    return(
+      <>
+        <div>
+          <SectionTitle title={'OFERTA ACADÉMICA'}/>
+          {/* <div>
+            <div className="relative inline-block">
+              <h2 className="text-slate-900 text-3xl"></h2>
+              <div className="absolute left-0 -bottom-1 h-1.5 w-full bg-yellow-500 rounded-4xl"></div>
             </div>
-            <div>
-              {/* carrousel */}
+            <div className="h-0.5  bg-neutral-400 rounded-4xl"></div>
+          </div> */}
+          <div>
+            <div className="mt-5 relative inline-block">
+              {academicOffer.map((el, id)=>(
+                <div key={id} className=" relative inline-block mr-5">
+                  <h2 className="text-slate-900 text-2xl">{el}</h2>
+                  <div className="absolute left-0 -bottom-1 h-1.5 w-full bg-yellow-500 rounded-4xl"></div>
+                </div>
+              ))}
+              <div className="h-0.5  bg-neutral-400 rounded-4xl"></div>
+            </div>
+            <div className="grid grid-cols-3">
+              {
+                dataCarreras.map((el, ind)=>(
+                  <Card
+                    key={ind}
+                    careerName={el.careerName}
+                    desc={el.description}
+                  />
+                ))
+              }
+
+
             </div>
             <div className="bg-[url(/img/pattern.svg)]">
               <h2 className="text-white text-5xl">FORMA PARTE DE AQUELLOS</h2>

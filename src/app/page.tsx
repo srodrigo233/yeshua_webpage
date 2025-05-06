@@ -1,6 +1,9 @@
 
 import Description from "@/components/main/Description";
 import AcademicOffer from "@/components/main/AcademicOffer";
+import News from "@/components/main/News";
+import Events from "@/components/main/Events";
+import Thoughts from "@/components/main/Thoughts";
 
 export default function Home() {
 
@@ -21,15 +24,16 @@ export default function Home() {
         <div className="@container">
           <Description/>
           <AcademicOffer/>
-
-
-
+          <News/>
+          <Events/>
+          <Thoughts/>
         </div>
+
         
       {/* </main> */}
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
+      {/* <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
         This is the footer
-      </footer>
+      </footer> */}
     </div>
   );
 }
