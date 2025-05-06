@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-
+import { GoArrowRight } from "react-icons/go";
 interface CardProps{
     careerName: string
     desc:String
@@ -12,7 +12,9 @@ const Card:FC<CardProps> = ({careerName, desc})=> {
                 <div className='text-2xl font-bold'>{careerName}</div>
                 <div>{desc}</div>
             </div>
-            <button className='absolute bottom-5 right-5 bg-yellow-500 rounded-full'>---</button>
+            <button className='absolute bottom-5 right-5 bg-yellow-500 rounded-full p-2 text-3xl'>
+                <GoArrowRight/>
+            </button>
         </div>
     )
 }
