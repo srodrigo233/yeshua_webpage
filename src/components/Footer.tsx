@@ -31,7 +31,7 @@ const Footer = () => {
             {[
               { label: 'Eventos', href: '/eventos' },
               { label: 'Noticias', href: '/noticias' },
-              { label: 'Contáctanos', href: '/contacto' },
+              { label: 'Contáctanos', href: 'info' },
             ].map(({ label, href }) => (
               <li key={label}>
                 <Link href={href} className="hover:underline">
