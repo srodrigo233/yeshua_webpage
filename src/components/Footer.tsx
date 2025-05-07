@@ -29,7 +29,7 @@ const Footer = () => {
           <h3 className="text-lg font-bold uppercase mb-6">Servicios</h3>
           <ul className="space-y-3 text-sm text-amber-300">
             {[
-              { label: 'Eventos', href: '/eventos' },
+              { label: 'Eventos', href: 'events' },
               { label: 'Noticias', href: '/noticias' },
               { label: 'Contáctanos', href: 'info' },
             ].map(({ label, href }) => (
