@@ -57,9 +57,9 @@ const EventDetail:FC<EventDetailProps> = ({date, title, banner, isActive}) => {
 
 const Events = () =>{
     return(
-        <div className=''>
-            <SectionTitle title="Eventos"/>
-            <div className='pl-10 pt-3'>
+        <div className="px-10 mt-5">
+            <SectionTitle size={4} title="EVENTOS"/>
+            <div className='pl-10 mt-8'>
                 <div className='relative flex flex-col'>
                     <div className='absolute bottom-0 flex-1 left-3 w-0.5 mt-1 bg-neutral-400 z-0'></div>
                     <div className=''>
