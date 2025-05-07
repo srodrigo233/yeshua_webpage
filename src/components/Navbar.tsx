@@ -9,7 +9,7 @@ const navItems = [
   { name: 'Sobre Yeshiva', href: '/about' },
   { name: 'Oferta Académica', href: '/oferta' },
   { name: 'Noticias', href: '/noticias' },
-  { name: 'Información', href: '/informacion' },
+  { name: 'Información', href: '/info' },
 ];
 
 export default function Navbar() {
