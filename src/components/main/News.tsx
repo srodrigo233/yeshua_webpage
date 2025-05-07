@@ -9,6 +9,7 @@ const newsData = [
         title: "Titulo",
         description: "Lorem ipsum",
         image: imageDoctor
+        
     },
     {
         title: "Nueva técnica reduce errores en medicación",
@@ -38,9 +39,67 @@ const newsData = [
 ]
 const News = ()=>{
     return(
-        <>
-            <SectionTitle title="Noticias"/>
-            <div className="grid grid-flow-col grid-rows-3 gap-1">
+        <div className="px-10">
+            <SectionTitle size={4} title="NOTICIAS"/>
+
+            <div className="flex flex-row mt-5">
+                <div className="basis-2/4">
+                    <Card
+                        key={1}
+                        cardTitle={newsData[0].title}
+                        carDescription={newsData[0].description}
+                        cardImage={newsData[0].image}
+                        isNews={true}
+                    />
+                </div>
+                <div className="basis-1/4">
+                    <Card
+                        key={2}
+                        cardTitle={newsData[1].title}
+                        carDescription={newsData[1].description}
+                        cardImage={newsData[1].image}
+                        isNews={true}
+                    />
+                </div><div className="basis-1/4">
+                    <Card
+                        key={3}
+                        cardTitle={newsData[2].title}
+                        carDescription={newsData[2].description}
+                        cardImage={newsData[2].image}
+                        isNews={true}
+                    />
+                </div>
+                                
+            </div>
+            <div className="flex flex-row">
+                <div className="basis-1/4">
+                    <Card
+                        key={1}
+                        cardTitle={newsData[3].title}
+                        carDescription={newsData[3].description}
+                        cardImage={newsData[3].image}
+                        isNews={true}
+                    />
+                </div>
+                <div className="basis-1/4">
+                    <Card
+                        key={2}
+                        cardTitle={newsData[4].title}
+                        carDescription={newsData[4].description}
+                        cardImage={newsData[4].image}
+                        isNews={true}
+                    />
+                </div><div className="basis-2/4">
+                    <Card
+                        key={3}
+                        cardTitle={newsData[5].title}
+                        carDescription={newsData[5].description}
+                        cardImage={newsData[5].image}
+                        isNews={true}
+                    />
+                </div>
+            </div>
+            {/* <div className="grid grid-flow-col grid-rows-3 gap-1 py-5">
                 {
                     newsData.map((el, ind)=>(
                         <Card 
@@ -51,8 +110,8 @@ const News = ()=>{
                         />
                     ))
                 }
-            </div>
-        </>
+            </div> */}
+        </div>
     )
 }
 export default News;

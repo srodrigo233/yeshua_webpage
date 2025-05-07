@@ -5,6 +5,8 @@ import News from "@/components/main/News";
 import Events from "@/components/main/Events";
 import Thoughts from "@/components/main/Thoughts";
 
+import SignLink from "@/components/main/SignLink";
+
 import Image from "next/image";
 import imageClassRoom from '../../public/img/classroom.jpg'
 
@@ -14,7 +16,7 @@ export default function Home() {
   const titlePortait = "sueños, creando oportunidades";
   
   return (
-    <div className="grid items-center justify-items-center">
+    <div className="">
         <div className="relative w-full h-[50vh]">
           <Image
             style={{ objectFit: 'cover' }}
@@ -37,6 +39,9 @@ export default function Home() {
         <div className="max-w-5xl mx-auto px-4 py-10">
           <Description/>
           <AcademicOffer/>
+        </div>
+        <SignLink/>
+        <div className="max-w-5xl mx-auto px-4 py-10">
           <News/>
           <Events/>
           <Thoughts/>
