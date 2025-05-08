@@ -2,25 +2,32 @@
 
 import React, { FC, useEffect, useState } from 'react';
 import SectionTitle from "../commons/SectionTitle";
+import Image  from 'next/image';
+
+import ilustration1 from '../../../public/img/ilustration1.png'
+import ilustration2 from '../../../public/img/ilustration2.png'
+import ilustration3 from '../../../public/img/ilustration3.png'
+
+import { GoArrowRight } from "react-icons/go";
 
 const events = [
 
     {
         date: 'dd/mm/aaaa',
         title: 'Curso práctico de Inyectables y Venoclisis',
-        banner: 'public/image.png',
+        banner: ilustration1,
         isActive: true,
     },
     {
         date: 'dd/mm/aaaa',
         title: 'Presente en la rueda de negocios de la ICAM',
-        banner: 'public/image.png',
+        banner: ilustration2,
         isActive: true,
     },
     {
         date: 'dd/mm/aaaa',
         title: 'Presente en el día del peatón',
-        banner: 'public/image.png',
+        banner: ilustration3,
         isActive: false,
     },
     // {
@@ -40,11 +47,11 @@ const events = [
 interface EventDetailProps{
     date:string,
     title:string,
-    banner: string,
+    // banner: StaticImageData,
     isActive: boolean
 }
 
-const EventDetail:FC<EventDetailProps> = ({date, title, banner, isActive}) => {
+const EventDetail:FC<EventDetailProps> = ({date, title, isActive}) => {
 
     return(
         <div className='relative flex'>
@@ -59,7 +66,6 @@ const EventDetail:FC<EventDetailProps> = ({date, title, banner, isActive}) => {
 
 const Events = () =>{
 
-    // const [isActive, setIsActive] = useState(false);
     const [currentIndex, setCurrentIndex] = useState(0)
 
     useEffect(()=>{
@@ -74,20 +80,36 @@ const Events = () =>{
     return(
         <div className="px-10 mt-5">
             <SectionTitle size={4} title="EVENTOS"/>
-            <div className='pl-10 mt-8'>
+            <div className='pl-2 mt-8'>
                 <div className='relative flex flex-col'>
-                    <div className='absolute bottom-0 flex-1 left-3 w-0.5 mt-1 bg-neutral-400 z-0'></div>
+                    {/* <div className='absolute bottom-0 flex-1 left-3 w-0.5 mt-1 bg-neutral-400 z-0'></div> */}
+                    
+                    <div className='flex flex-row'>
+                        <div className='basis-2/3'>
+                            {events.map((el, id)=>(
+                                <EventDetail 
+                                    key={id} 
+                                    date={el.date} 
+                                    title={el.title} 
+                                    isActive={id === currentIndex}
+                                    // banner={el.banner}
+                                />
+                            ))}
+                        </div>
 
-                    <div className=''>
-                        {events.map((el, id)=>(
-                            <EventDetail 
-                                key={id} 
-                                date={el.date} 
-                                title={el.title} 
-                                isActive={id === currentIndex}
-                                banner={el.banner}
+                        <div className='p-5 basis-1/3'>
+                            <Image
+                                alt='Event banner'
+                                src={events[currentIndex].banner}
                             />
-                        ))}
+                        </div>
+                    </div>
+                        
+                    <div className='flex absolute bottom-0'>
+                        <button className='bg-yellow-500 rounded-full p-2 text-2xl cursor-pointer'>
+                            <GoArrowRight/>
+                        </button>
+                        <h2 className={' self-center font-bold text-1xl text-blue-900 pl-5'}>Ir al calendario de eventos</h2>
                     </div>
                     
                 </div>

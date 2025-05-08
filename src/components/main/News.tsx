@@ -1,6 +1,7 @@
 import SectionTitle from "../commons/SectionTitle";
 import Card from "../commons/Card";
 
+import { GoArrowRight } from "react-icons/go";
 
 import imageDoctor from '../../../public/img/medico.jpg'
 
@@ -98,6 +99,12 @@ const News = ()=>{
                         isNews={true}
                     />
                 </div>
+            </div>
+            <div className='flex mt-5 mb-7'>
+                <button className='bg-yellow-500 rounded-full p-2 text-2xl cursor-pointer'>
+                    <GoArrowRight/>
+                </button>
+                <h2 className={' self-center font-bold text-1xl text-blue-900 pl-5'}>Ir al blog de noticias</h2>
             </div>
             {/* <div className="grid grid-flow-col grid-rows-3 gap-1 py-5">
                 {
