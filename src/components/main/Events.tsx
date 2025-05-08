@@ -1,4 +1,6 @@
-import React, { FC } from 'react';
+'use client'
+
+import React, { FC, useEffect, useState } from 'react';
 import SectionTitle from "../commons/SectionTitle";
 
 const events = [
@@ -56,19 +58,33 @@ const EventDetail:FC<EventDetailProps> = ({date, title, banner, isActive}) => {
 }
 
 const Events = () =>{
+
+    // const [isActive, setIsActive] = useState(false);
+    const [currentIndex, setCurrentIndex] = useState(0)
+
+    useEffect(()=>{
+        const interval = setInterval(() => {
+            setTimeout(() => {
+              setCurrentIndex((prev) => (prev + 1) % events.length);
+            }, 300); 
+          }, 3000);
+          return () => clearInterval(interval);
+    }, [])
+
     return(
         <div className="px-10 mt-5">
             <SectionTitle size={4} title="EVENTOS"/>
             <div className='pl-10 mt-8'>
                 <div className='relative flex flex-col'>
                     <div className='absolute bottom-0 flex-1 left-3 w-0.5 mt-1 bg-neutral-400 z-0'></div>
+
                     <div className=''>
                         {events.map((el, id)=>(
                             <EventDetail 
                                 key={id} 
                                 date={el.date} 
                                 title={el.title} 
-                                isActive={el.isActive}
+                                isActive={id === currentIndex}
                                 banner={el.banner}
                             />
                         ))}

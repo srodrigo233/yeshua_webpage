@@ -1,12 +1,16 @@
+'use client'
 
 import Card from "../commons/Card";
 import SectionTitle from "../commons/SectionTitle";
 
 import imageDoctor from '../../../public/img/medico.jpg'
+import { useEffect, useState, useRef } from "react";
+
+import InfiniteCarousel from "./InfiniteCarousel";
 
 const AcademicOffer = () =>{
     const academicOffer = ['Carreras', 'Cursos', 'Capacitaciones'];
-    const dataCarreras = [
+    const initialCards = [
       {
         careerName: "Enfermeria",
         description: "Licenciatura en auxiliar de enfermeria",
@@ -21,11 +25,37 @@ const AcademicOffer = () =>{
         careerName: "Nombre carrera",
         description: "Grado Academico",
         image: imageDoctor
+      },
+      {
+        careerName: "Nombre carrera",
+        description: "Grado Academico",
+        image: imageDoctor
       }
     ]
+    // const [current, setCurrent] = useState(0);
+    // const [cards, setCards] = useState(initialCards);
+    // const [isSliding, setIsSliding] = useState(false);
+
+    // const containerRef = useRef<HTMLDivElement>(null);
+
+    // useEffect(() => {
+    //   const interval = setInterval(() => {
+    //     setIsSliding(true);
+    //     //setCurrent((prev) => (prev === cards.length - 1 ? 0 : prev + 1));
+    //     setTimeout(() => {
+    //       setCards((prev)=>{
+    //         const [first, ...rest] = prev;
+    //         return [...rest, first];
+    //       });
+    //       setIsSliding(false); // Resetear la animación
+    //     }, 1000); // Tiempo igual al de la animación
+    //   }, 5000);
+    //   return () => clearInterval(interval);
+    // }, [])
 
     return(
       <>
+        
         <div className="p-10">
           <SectionTitle size={4} title={'OFERTA ACADÉMICA'}/>
           {/* <div>
@@ -47,9 +77,31 @@ const AcademicOffer = () =>{
             </div>
 
             <div className=" mb-5">
-              <div className="grid grid-cols-3">
+
+              <InfiniteCarousel/>
+              {/* <div className="relative w-full max-w-5xl mx-auto overflow-hidden">
+                <div
+                  className={`flex transition-transform duration-1000 ease-in-out`}
+                  style={{
+                    transform: isSliding ? 'translateX(-33.3333%)' : 'translateX(0%)',
+                  }}
+                >
+                  {cards.slice(0, 4).map((card, id) => (
+                    <div key={id} className="w-1/3 p-4 flex-shrink-0">
+                      <div className="bg-white rounded-lg shadow p-6 h-full">
+                        <h2 className="text-xl font-bold">{card.careerName}</h2>
+                        <p className="mt-2 text-gray-600">{card.description}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div> */}
+
+              
+
+              {/* <div className="grid grid-cols-3">
                 {
-                  dataCarreras.map((el, ind)=>(
+                  cards.map((el, ind)=>(
                     <Card
                       key={ind}
                       cardTitle={el.careerName}
@@ -59,7 +111,7 @@ const AcademicOffer = () =>{
                     />
                   ))
                 }
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

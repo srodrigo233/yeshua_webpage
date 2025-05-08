@@ -11,7 +11,7 @@ interface CardProps{
 
 const Card:FC<CardProps> = ({cardTitle, carDescription, cardImage, isNews})=> {
     return(
-        <div className={`relative ${isNews? 'h-50': 'h-100'} h-50 bg-amber-200 p-3 m-3 rounded-2xl overflow-hidden shadow-2xl`}>
+        <div className={`relative ${isNews? 'h-50': 'h-100'} h-50 bg-amber-200 p-3 m-3 rounded-2xl overflow-hidden shadow-1xl`}>
             <Image
                 fill
                 style={{ objectFit: 'cover' }}
