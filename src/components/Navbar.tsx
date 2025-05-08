@@ -7,7 +7,7 @@ import { useState } from 'react';
 const navItems = [
   { name: 'Inicio', href: '/' },
   { name: 'Sobre Yeshiva', href: '/about' },
-  { name: 'Oferta Académica', href: '/oferta' },
+  { name: 'Oferta Académica', href: '/academic' },
   { name: 'Noticias', href: '/noticias' },
   { name: 'Información', href: '/info' },
 ];
