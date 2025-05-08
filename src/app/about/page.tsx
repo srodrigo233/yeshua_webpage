@@ -3,7 +3,7 @@ import SectionTitle from '@/components/commons/SectionTitle';
 
 const History = () => (
   <section className="mb-12 space-y-4">
-    <SectionTitle title="HISTORIA" />
+    <SectionTitle size={2} title="HISTORIA" />
     {[
       "Yeshiva es un instituto de formación tecnológica que nace con el propósito de ofrecer educación de excelencia en diversas áreas del conocimiento. No es solo un centro de aprendizaje, sino un espacio donde los estudiantes pueden desarrollar todo su potencial, fortaleciendo sus habilidades y preparándose para un futuro de éxito.",
       "Formamos parte de SHEMAYISRRAEL S.R.L., un grupo empresarial con una identidad sólida y principios bien definidos. Gracias a esto, contamos con el respaldo de unidades productivas estratégicas, como un centro médico privado, que servirá de apoyo práctico para ciertas áreas de estudio, permitiendo a nuestros estudiantes aplicar sus conocimientos en un entorno real.",
@@ -31,7 +31,7 @@ const MisionVision = () => (
       ].map(({ title, text }) => (
         <div key={title} className="w-full md:w-1/2 flex justify-center">
           <div className="max-w-prose">
-            <SectionTitle title={title} />
+            <SectionTitle size={2} title={title} />
             <p className="leading-relaxed mt-4 text-justify">{text}</p>
           </div>
         </div>
@@ -76,7 +76,7 @@ const Values = () => {
 
   return (
     <section className="mb-12">
-      <SectionTitle title="VALORES" />
+      <SectionTitle size={2} title="VALORES" />
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mt-8">
         {values.map((value, index) => (
           <div
