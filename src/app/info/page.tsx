@@ -39,7 +39,7 @@ const InformacionPage = () => {
 
         {/* Contacto */}
         <section>
-          <div className='mb-5'><SectionTitle title="Contacto" /></div>
+          <div className='mb-5'><SectionTitle size={2} title="Contacto" /></div>
           <p className="text-justify leading-relaxed">Administración</p>
           <ul className="list-disc list-inside mt-4 space-y-2">
             <li><strong>Teléfono:</strong> {contactInfo.phone}</li>
@@ -50,7 +50,7 @@ const InformacionPage = () => {
         {/* Dirección */}
         <section>
           <div className="mb-5">
-            <SectionTitle title="Dirección" />
+            <SectionTitle size={2} title="Dirección" />
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
@@ -82,7 +82,7 @@ const InformacionPage = () => {
 
         {/* Horarios */}
         <section>
-          <div className='mb-5'><SectionTitle title="Horarios de atención" /></div>
+          <div className='mb-5'><SectionTitle size={2} title="Horarios de atención" /></div>
           <ul className="list-disc list-inside space-y-1">
             {officeHours.map((line, index) => (
               <li key={index}>{line}</li>
