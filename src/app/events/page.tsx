@@ -60,7 +60,8 @@ const EventosPage = () => {
               cardTitle={evento.cardTitle}
               carDescription={evento.carDescription}
               cardImage={evento.cardImage}
-              isNews={false}
+              date='09/05/2025'
+              variant='event'
             />
           ))}
         </div>
