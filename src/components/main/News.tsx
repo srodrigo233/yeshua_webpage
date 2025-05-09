@@ -50,7 +50,7 @@ const News = ()=>{
                         cardTitle={newsData[0].title}
                         carDescription={newsData[0].description}
                         cardImage={newsData[0].image}
-                        isNews={true}
+                        variant='news'
                     />
                 </div>
                 <div className="basis-1/4">
@@ -59,7 +59,7 @@ const News = ()=>{
                         cardTitle={newsData[1].title}
                         carDescription={newsData[1].description}
                         cardImage={newsData[1].image}
-                        isNews={true}
+                        variant='news'
                     />
                 </div><div className="basis-1/4">
                     <Card
@@ -67,7 +67,7 @@ const News = ()=>{
                         cardTitle={newsData[2].title}
                         carDescription={newsData[2].description}
                         cardImage={newsData[2].image}
-                        isNews={true}
+                        variant='news'
                     />
                 </div>
                                 
@@ -79,7 +79,7 @@ const News = ()=>{
                         cardTitle={newsData[3].title}
                         carDescription={newsData[3].description}
                         cardImage={newsData[3].image}
-                        isNews={true}
+                        variant='news'
                     />
                 </div>
                 <div className="basis-1/4">
@@ -88,7 +88,7 @@ const News = ()=>{
                         cardTitle={newsData[4].title}
                         carDescription={newsData[4].description}
                         cardImage={newsData[4].image}
-                        isNews={true}
+                        variant='news'
                     />
                 </div><div className="basis-2/4">
                     <Card
@@ -96,7 +96,7 @@ const News = ()=>{
                         cardTitle={newsData[5].title}
                         carDescription={newsData[5].description}
                         cardImage={newsData[5].image}
-                        isNews={true}
+                        variant='news'
                     />
                 </div>
             </div>
