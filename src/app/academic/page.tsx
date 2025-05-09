@@ -1,7 +1,7 @@
 import React from 'react';
 import SectionTitle from '@/components/commons/SectionTitle';
 import Card from '@/components/commons/Card';
-import oferta1 from '../../../public/AcademicOffers/academic.png';
+import oferta1 from '../../../public/academicOffers/academic.png';
 
 const tecnicosSuperiores = [
   {
@@ -51,12 +51,12 @@ const becas = [
     cardImage: oferta1,
   },
   {
-    cardTitle: 'Beca Social',
+    cardTitle: 'Beca Trabajo',
     carDescription: 'Dirigida a estudiantes con recursos económicos limitados.',
     cardImage: oferta1,
   },
   {
-    cardTitle: 'Beca por Discapacidad',
+    cardTitle: 'Beca Social',
     carDescription: 'Apoyo a estudiantes con capacidades diferentes.',
     cardImage: oferta1,
   },
@@ -86,7 +86,7 @@ const OfertaAcademicaPage = () => {
                 cardTitle={item.cardTitle}
                 carDescription={item.carDescription}
                 cardImage={item.cardImage}
-                isNews={false}
+                variant='news'
               />
             ))}
           </div>
@@ -102,7 +102,7 @@ const OfertaAcademicaPage = () => {
                 cardTitle={item.cardTitle}
                 carDescription={item.carDescription}
                 cardImage={item.cardImage}
-                isNews={false}
+                variant='news'
               />
             ))}
           </div>
@@ -118,7 +118,7 @@ const OfertaAcademicaPage = () => {
                 cardTitle={item.cardTitle}
                 carDescription={item.carDescription}
                 cardImage={item.cardImage}
-                isNews={true}
+                variant='beca'
               />
             ))}
           </div>

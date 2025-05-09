@@ -1,37 +1,36 @@
 'use client'
 
-import Card from "../commons/Card";
 import SectionTitle from "../commons/SectionTitle";
 
-import imageDoctor from '../../../public/img/medico.jpg'
-import { useEffect, useState, useRef } from "react";
+// import imageDoctor from '../../../public/img/medico.jpg'
+
 
 import InfiniteCarousel from "./InfiniteCarousel";
 
 const AcademicOffer = () =>{
     const academicOffer = ['Carreras', 'Cursos', 'Capacitaciones'];
-    const initialCards = [
-      {
-        careerName: "Enfermeria",
-        description: "Licenciatura en auxiliar de enfermeria",
-        image: imageDoctor
-      },
-      {
-        careerName: "Emergencias y urgencias médicas",
-        description: "Técnico superior en emergencias y urgenc...",
-        image: imageDoctor
-      },
-      {
-        careerName: "Nombre carrera",
-        description: "Grado Academico",
-        image: imageDoctor
-      },
-      {
-        careerName: "Nombre carrera",
-        description: "Grado Academico",
-        image: imageDoctor
-      }
-    ]
+    // const initialCards = [
+    //   {
+    //     careerName: "Enfermeria",
+    //     description: "Licenciatura en auxiliar de enfermeria",
+    //     image: imageDoctor
+    //   },
+    //   {
+    //     careerName: "Emergencias y urgencias médicas",
+    //     description: "Técnico superior en emergencias y urgenc...",
+    //     image: imageDoctor
+    //   },
+    //   {
+    //     careerName: "Nombre carrera",
+    //     description: "Grado Academico",
+    //     image: imageDoctor
+    //   },
+    //   {
+    //     careerName: "Nombre carrera",
+    //     description: "Grado Academico",
+    //     image: imageDoctor
+    //   }
+    // ]
     // const [current, setCurrent] = useState(0);
     // const [cards, setCards] = useState(initialCards);
     // const [isSliding, setIsSliding] = useState(false);

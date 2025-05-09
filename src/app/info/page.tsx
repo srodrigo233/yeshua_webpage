@@ -28,7 +28,7 @@ const InformacionPage = () => {
       {/* Imagen de cabecera */}
       <div className="w-full h-[60vh] overflow-hidden">
         <img
-          src="/infoBg.svg"
+          src="/informationBg.svg"
           alt="Información del Instituto"
           className="w-full h-full object-cover"
         />

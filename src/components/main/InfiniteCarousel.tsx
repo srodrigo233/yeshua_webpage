@@ -83,7 +83,7 @@ export default function InfiniteCarousel() {
               cardTitle={card.careerName}
               carDescription={card.description}
               cardImage={card.image}
-              isNews={false}
+              variant='news'
             />
           </div>
         ))}
