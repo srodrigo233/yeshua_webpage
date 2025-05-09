@@ -74,15 +74,16 @@ export default async function Page({ params,}: { params : Promise<{ slug: string
   const classForTableSpacing = `m-5  border-separate border-spacing-y-3 `
 
   return (
-    <div className="w-full h-[50vh]">
+    <div className="max-w-5xl mx-auto px-4 py-10">
         
         <div className="flex flex-wrap">
             <div className="basis-2/3 p-10">
-                <div className="flex flex-wrap gap-2">
-                    <h4 className="">Volver a la lista de eventos</h4>
+                <div className="flex gap-2">
+                    <a className="font-bold">Volver a la lista de eventos</a>
                     <div className="flex flex-wrap gap-2">
                         {linkEvents.map((elem, ind)=>(
-                            <button 
+                            <button
+                                key={ind}
                                 className="px-4 py-1 text-sm font-bold text-blue-950 bg-white border-2 border-blue-950 rounded-lg hover:bg-blue-900 hover:text-white transition"
                             >{elem.label}</button>
                         ))}
@@ -90,30 +91,32 @@ export default async function Page({ params,}: { params : Promise<{ slug: string
                 </div>
                 <h1>{eventData.title}</h1>
                 <table className={classForTableSpacing}>
-                    <tr className={classForSlugData}>
-                        <td className={classForLabel}>Fecha:</td>
-                        <td>{eventData.dateDesc}</td>
-                    </tr>
+                    <tbody>
+                        <tr className={classForSlugData}>
+                            <td className={classForLabel}>Fecha:</td>
+                            <td>{eventData.dateDesc}</td>
+                        </tr>
 
-                    <tr className={classForSlugData}>
-                        <td className={classForLabel}>Hora:</td>
-                        <td>{eventData.schedules.map((el, ind)=>(<p>{el.groupLabel} - {el.initialHour} • {el.finalHour}</p>))}</td>
-                    </tr>
+                        <tr className={classForSlugData}>
+                            <td className={classForLabel}>Hora:</td>
+                            <td>{eventData.schedules.map((el, ind)=>(<p key={ind}>{el.groupLabel} - {el.initialHour} • {el.finalHour}</p>))}</td>
+                        </tr>
 
-                    <tr className={classForSlugData}>
-                        <td className={classForLabel}>Lugar:</td>
-                        <td>{eventData.location}</td>
-                    </tr>
+                        <tr className={classForSlugData}>
+                            <td className={classForLabel}>Lugar:</td>
+                            <td>{eventData.location}</td>
+                        </tr>
 
-                    <tr className={classForSlugData}>
-                        <td className={classForLabel}>Inversión:</td>
-                        <td>Bs.- {eventData.cost}</td>
-                    </tr>
+                        <tr className={classForSlugData}>
+                            <td className={classForLabel}>Inversión:</td>
+                            <td>Bs.- {eventData.cost}</td>
+                        </tr>
 
-                    <tr className={classForSlugData}>
-                        <td className={classForLabel}>Dirigido a:</td>
-                        <td>{eventData.addressedTo}</td>
-                    </tr>
+                        <tr className={classForSlugData}>
+                            <td className={classForLabel}>Dirigido a:</td>
+                            <td>{eventData.addressedTo}</td>
+                        </tr>
+                    </tbody>
                 </table>
                 <div>
                     {signLinks.map((el, ind)=>(
@@ -131,21 +134,22 @@ export default async function Page({ params,}: { params : Promise<{ slug: string
                     src={eventBanner}
                 />
                 <table className={classForTableSpacing}>
-                    <tr className={classForSlugData}>
-                        <td className={classForLabel}>Organiza:</td>
-                        <td>{eventData.organization}</td>
-                    </tr>
-
-                    <tr className={classForSlugData}>
-                        <td className={classForLabel}>Contacto:</td>
-                        <td>{eventData.contact.map((el, ind)=>(
-                            <div>
-                                <div>{el.name}</div>
-                                <div>{el.phoneNumber}</div>
-                                <div>{el.email}</div>
-                            </div>))}
-                        </td>
-                    </tr>
+                    <tbody>
+                        <tr className={classForSlugData}>
+                            <td className={classForLabel}>Organiza:</td>
+                            <td>{eventData.organization}</td>
+                        </tr>
+                        <tr className={classForSlugData}>
+                            <td className={classForLabel}>Contacto:</td>
+                            <td>{eventData.contact.map((el, ind)=>(
+                                <div key={ind}>
+                                    <div>{el.name}</div>
+                                    <div>{el.phoneNumber}</div>
+                                    <div>{el.email}</div>
+                                </div>))}
+                            </td>
+                        </tr>
+                    </tbody>
                 </table>
             </div>
             
