@@ -1,7 +1,10 @@
 import Image from "next/image";
+import SectionTitle from "@/components/commons/SectionTitle";
 
 import eventBanner from '../../../../public/img/eventBanner.png'
 import Card from "@/components/commons/Card";
+
+import eventPicture from '../../../../public/img/eventPicture.jpg';
 
 export default async function Page({ params,}: { params : Promise<{ slug: string }>}) 
 { 
@@ -64,7 +67,8 @@ export default async function Page({ params,}: { params : Promise<{ slug: string
     relatedEvents:[
         {
             eventTitle:'Curso práctico de suturas',
-            eventLinkPath:[]
+            evenImage:eventPicture,
+            eventLinkPath:''
         }
     ]
   }
@@ -77,52 +81,56 @@ export default async function Page({ params,}: { params : Promise<{ slug: string
     <div className="max-w-5xl mx-auto px-4 py-10">
         
         <div className="flex flex-wrap">
-            <div className="basis-2/3 p-10">
-                <div className="flex gap-2">
-                    <a className="font-bold">Volver a la lista de eventos</a>
-                    <div className="flex flex-wrap gap-2">
+            <div className="basis-2/3">
+                <div className="flex justify-between text-xs mb-5">
+                    <a className="font-bold content-center">Volver a la lista de eventos</a>
+                    <div className="flex">
                         {linkEvents.map((elem, ind)=>(
                             <button
                                 key={ind}
-                                className="px-4 py-1 text-sm font-bold text-blue-950 bg-white border-2 border-blue-950 rounded-lg hover:bg-blue-900 hover:text-white transition"
+                                className="px-4 py-1 mx-1 font-bold text-blue-950 bg-white border-2 border-blue-950 rounded-lg hover:bg-blue-900 hover:text-white transition"
                             >{elem.label}</button>
                         ))}
                     </div>
                 </div>
-                <h1>{eventData.title}</h1>
-                <table className={classForTableSpacing}>
-                    <tbody>
-                        <tr className={classForSlugData}>
-                            <td className={classForLabel}>Fecha:</td>
-                            <td>{eventData.dateDesc}</td>
-                        </tr>
 
-                        <tr className={classForSlugData}>
-                            <td className={classForLabel}>Hora:</td>
-                            <td>{eventData.schedules.map((el, ind)=>(<p key={ind}>{el.groupLabel} - {el.initialHour} • {el.finalHour}</p>))}</td>
-                        </tr>
+                <div className="pt-5">
+                    <SectionTitle title={eventData.title} size={4}/>                       
+                
+                    <table className={classForTableSpacing}>
+                        <tbody>
+                            <tr className={classForSlugData}>
+                                <td className={classForLabel}>Fecha:</td>
+                                <td>{eventData.dateDesc}</td>
+                            </tr>
 
-                        <tr className={classForSlugData}>
-                            <td className={classForLabel}>Lugar:</td>
-                            <td>{eventData.location}</td>
-                        </tr>
+                            <tr className={classForSlugData}>
+                                <td className={classForLabel}>Hora:</td>
+                                <td>{eventData.schedules.map((el, ind)=>(<p key={ind}>{el.groupLabel} - {el.initialHour} • {el.finalHour}</p>))}</td>
+                            </tr>
 
-                        <tr className={classForSlugData}>
-                            <td className={classForLabel}>Inversión:</td>
-                            <td>Bs.- {eventData.cost}</td>
-                        </tr>
+                            <tr className={classForSlugData}>
+                                <td className={classForLabel}>Lugar:</td>
+                                <td>{eventData.location}</td>
+                            </tr>
 
-                        <tr className={classForSlugData}>
-                            <td className={classForLabel}>Dirigido a:</td>
-                            <td>{eventData.addressedTo}</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <div>
+                            <tr className={classForSlugData}>
+                                <td className={classForLabel}>Inversión:</td>
+                                <td>Bs.- {eventData.cost}</td>
+                            </tr>
+
+                            <tr className={classForSlugData}>
+                                <td className={classForLabel}>Dirigido a:</td>
+                                <td>{eventData.addressedTo}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div className="grid grid-cols-2 place-content-between gap-4">
                     {signLinks.map((el, ind)=>(
                         <button
                             key={ind} 
-                            className="px-4 py-1 text-sm font-bold text-blue-950 bg-white border-2 border-blue-950 rounded-lg hover:bg-blue-900 hover:text-white transition"
+                            className="px-4 py-1 text-sm font-bold cursor-pointer text-blue-950 bg-white border-2 border-blue-950 rounded-lg hover:bg-blue-900 hover:text-white transition"
                         >{el.label}</button> 
                     ))}
                 </div>
@@ -156,16 +164,17 @@ export default async function Page({ params,}: { params : Promise<{ slug: string
 
             <div className="basis-1/3 p-10">
                 <div>
-                    <h2>Eventos relacionados</h2>
+                    <h2 className="font-bold">Eventos relacionados</h2>
                     {
                         eventData.relatedEvents.map((el, ind)=>(
                             <Card
                                 key={ind}
                                 cardTitle={el.eventTitle}
                                 carDescription={''}
-                                // cardImage={''}
-                                isNews={false}
-                            />))
+                                cardImage={el.evenImage}
+                                variant="event"
+                            />)
+                        )
                     }
                     
                 </div>
