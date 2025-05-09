@@ -1,7 +1,7 @@
 import React from 'react';
 import SectionTitle from '@/components/commons/SectionTitle';
 import Card from '@/components/commons/Card';
-import oferta1 from '../../../public/AcademicOffers/academic.png';
+import oferta1 from '../../../public/academicOffers/academic.png';
 
 const tecnicosSuperiores = [
   {
