@@ -63,6 +63,14 @@ export default async function Page({ params,}: { params : Promise<{ slug: string
     },
   ]
 
+
+//   const EstadisticsComponent = () =>{
+//     return(
+        
+//     )
+
+//   }
+
   return (
     
     <>
@@ -74,43 +82,87 @@ export default async function Page({ params,}: { params : Promise<{ slug: string
             src={paramedic}
           />
         </div>
-        <div className="max-w-5xl mx-auto">
-            <div className="flex items-center text-slate-500 font-bold text-2xl cursor-pointer ml-10 mt-5">   
-                <MdKeyboardDoubleArrowLeft /> Volver a la oferta académica
+
+        <div className="flex flex-wrap">
+            <div className="max-w-5xl mx-auto basis-2/3">
+                <div className="flex items-center text-slate-500 font-bold text-2xl cursor-pointer ml-10 mt-5">   
+                    <MdKeyboardDoubleArrowLeft /> Volver a la oferta académica
+                </div>
+                <div className="m-10">
+                    <SectionTitle title={careerInfo.title} size={4}/>
+                    <div className="mt-5 mx-4">
+                        <div><a className="font-bold">Área de formación: </a> {careerInfo.area}</div>
+                        <div><a className="font-bold">Nivel de formación: </a> {careerInfo.level}</div>
+                        <div><a className="font-bold">Duración: </a> {careerInfo.area}</div>
+                        <div><a className="font-bold">Régimen de estudio: </a> {careerInfo.area}</div>
+                        <div><a className="font-bold">Horarios: </a> {}</div>
+                        <div><a className="font-bold">Título profesional: </a> {careerInfo.titleLabel}</div>
+                        <div><a className="font-bold">Malla curricular: </a> <a>PDF</a></div>
+                    </div>
+
+                </div>
+                <div className="m-10">
+                    <SectionTitle title={`POR QUÉ ESTUDIAR LA CARRERA`} size={4}/>
+                    <div className="mt-6 mx-4 text-justify">
+                        {whyStudyThis.map((par, ind)=>(
+                            <p key={ind} className="mb-3">{par}</p>
+                        ))}
+                    </div>
+                </div>
+                <div className="m-10">
+                    <SectionTitle title={`ÁREA DE TRABAJO`} size={4}/>
+                    <div className="mt-6 mx-4">
+                        <ul key={123} className="list-disc list-inside text-gray-800" >
+                            {workArea.map((par, ind)=>(
+                                <li key={ind} className="py-2">
+                                    <a className="font-bold">{par.title}</a>
+                                    <p className="ml-6">{par.description}</p>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                </div>
             </div>
-            <div className="m-10">
-                <SectionTitle title={careerInfo.title} size={4}/>
-                <div className="mt-5 mx-4">
-                    <div><a className="font-bold">Área de formación: </a> {careerInfo.area}</div>
-                    <div><a className="font-bold">Nivel de formación: </a> {careerInfo.level}</div>
-                    <div><a className="font-bold">Duración: </a> {careerInfo.area}</div>
-                    <div><a className="font-bold">Régimen de estudio: </a> {careerInfo.area}</div>
-                    <div><a className="font-bold">Horarios: </a> {}</div>
-                    <div><a className="font-bold">Título profesional: </a> {careerInfo.titleLabel}</div>
-                    <div><a className="font-bold">Malla curricular: </a> <a>PDF</a></div>
+            <div className="basis-1/3">
+                <div>
+                    <div>Carreras relacionadas</div>
+                </div>
+                <div>
+                    <div>Estadísticas de interés </div>
+
+                    <div className="bg-neutral-300 py-10 w-3/5 rounded-2xl">
+                        <div className='relative'>
+                            <div className={'absolute top-2 left-2  w-4 h-4 bg-neutral-400 rounded-full'}></div> 
+                            <div className='flex-none pl-12 pb-5'>
+                                <p className="font-bold">Crecimiento del empleo:</p>
+                                <p>6% (2021-2031)</p>
+                                <p>(Según la Oficina de Estadísticas Laborales de EE.UU.)</p>
+                            </div>
+                        </div>
+
+                        <div className='relative'>
+                            <div className={'absolute top-2 left-2 w-4 h-4 bg-neutral-400 rounded-full'}></div> 
+                            <div className='flex-none pl-12 pb-5'>
+                                <p className="font-bold">Demanda en España</p>
+                                <p>6% (2021-2031)</p>
+                                <p>(Según la Oficina de Estadísticas Laborales de EE.UU.)</p>
+                            </div>
+                        </div>
+
+                        <div className='relative'>
+                            <div className={'absolute top-2 left-2  w-4 h-4 bg-neutral-400 rounded-full'}></div> 
+                            <div className='flex-none pl-12 pb-5'>
+                                <p className="font-bold">Demanda en el sector:</p>
+                                <p>Una de las mas altas</p>
+                            </div>
+                        </div>
+
+
+                    </div>
                 </div>
 
-            </div>
-            <div className="m-10">
-                <SectionTitle title={`POR QUÉ ESTUDIAR LA CARRERA`} size={4}/>
-                <div className="mt-6 mx-4 text-justify">
-                    {whyStudyThis.map((par, ind)=>(
-                        <p key={ind} className="mb-3">{par}</p>
-                    ))}
-                </div>
-            </div>
-            <div className="m-10">
-                <SectionTitle title={`ÁREA DE TRABAJO`} size={4}/>
-                <div className="mt-6 mx-4">
-                    <ul key={123} className="list-disc list-inside text-gray-800" >
-                        {workArea.map((par, ind)=>(
-                            <li className="py-2">
-                                <a className="font-bold">{par.title}</a>
-                                <p className="ml-6">{par.description}</p>
-                            </li>
-                        ))}
-                    </ul>
-                </div>
+                        
+                            
             </div>
         </div>
     </>
