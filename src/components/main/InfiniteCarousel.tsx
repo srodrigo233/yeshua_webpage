@@ -29,13 +29,12 @@ const initialCards = [
 
 export default function InfiniteCarousel() {
   const [cards, setCards] = useState(initialCards);
-  // const [transitioning, setTransitioning] = useState(false);
+  
   const [currentIndex, setCurrentIndex] = useState(0);
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      // setTransitioning(true);
 
       // Deslizar visualmente a la izquierda
       if (containerRef.current) {
@@ -64,19 +63,13 @@ export default function InfiniteCarousel() {
   }, []);
 
   return (
-    <div className="w-full max-w-5xl mx-auto overflow-hidden">
-      <div
-        ref={containerRef}
-        className="flex"
-        // style={{
-        //   width: `${(cards.length + 1) * (100 / 3)}%`, // ejemplo para ajustar el ancho total
-        // }}
-      >
+    <div className="w-full max-w-5xl mx-auto overflow-hidden my-5">
+      <div ref={containerRef} className="flex">
         {/* Mostramos los primeros 4 cards (3 visibles + 1 de transición) */}
         {cards.slice(0, 4).map((card, ind) => (
           <div
             key={ind}
-            className="w-1/3 flex-shrink-0 p-4"
+            className="flex-shrink-0 w-[80vw] sm:w-[45vw] md:w-[30vw] lg:w-[22vw] xl:w-[20vw] mx-2 transition-transform duration-5000 ease-in-out"
           >
             <Card
               key={ind}

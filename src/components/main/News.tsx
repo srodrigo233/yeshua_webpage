@@ -43,8 +43,8 @@ const News = ()=>{
         <div className="px-10">
             <SectionTitle size={4} title="NOTICIAS"/>
 
-            <div className="flex flex-row mt-5">
-                <div className="basis-2/4">
+            <div className="flex flex-col md:flex-row mt-5 gap-4">
+                <div className="basis-full md:basis-2/4">
                     <Card
                         key={1}
                         cardTitle={newsData[0].title}
@@ -53,7 +53,7 @@ const News = ()=>{
                         variant='news'
                     />
                 </div>
-                <div className="basis-1/4">
+                <div className="basis-full md:basis-1/4">
                     <Card
                         key={2}
                         cardTitle={newsData[1].title}
@@ -61,7 +61,8 @@ const News = ()=>{
                         cardImage={newsData[1].image}
                         variant='news'
                     />
-                </div><div className="basis-1/4">
+                </div>
+                <div className="basis-full md:basis-1/4">
                     <Card
                         key={3}
                         cardTitle={newsData[2].title}
@@ -72,8 +73,8 @@ const News = ()=>{
                 </div>
                                 
             </div>
-            <div className="flex flex-row">
-                <div className="basis-1/4">
+            <div className="flex flex-col md:flex-row mt-4 gap-4">
+                <div className="basis-full md:basis-1/4">
                     <Card
                         key={1}
                         cardTitle={newsData[3].title}
@@ -82,7 +83,7 @@ const News = ()=>{
                         variant='news'
                     />
                 </div>
-                <div className="basis-1/4">
+                <div className="basis-full md:basis-1/4">
                     <Card
                         key={2}
                         cardTitle={newsData[4].title}
@@ -90,7 +91,7 @@ const News = ()=>{
                         cardImage={newsData[4].image}
                         variant='news'
                     />
-                </div><div className="basis-2/4">
+                </div><div className="basis-full md:basis-2/4">
                     <Card
                         key={3}
                         cardTitle={newsData[5].title}

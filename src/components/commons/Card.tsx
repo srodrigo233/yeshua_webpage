@@ -51,7 +51,7 @@ const Card: FC<CardProps> = ({ cardTitle, carDescription, cardImage, date, varia
   } = variantStyles[variant];
 
   return (
-    <div className={`relative bg-amber-200 p-3 m-3 rounded-2xl overflow-hidden shadow-1xl ${height}`}>
+    <div className={`relative p-3 m-3 rounded-2xl overflow-hidden shadow-1xl ${height}`}>
       {cardImage && (
         <Image
           fill

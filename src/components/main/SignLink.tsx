@@ -5,26 +5,32 @@ import { SiGoogleforms } from "react-icons/si";
 const SignLink = () =>{
     return (
         <>
-            <div className="relative bg-slate-800">
-              <div className="grid place-items-center bg-[url(/img/pattern.svg)] pt-15 pb-15">
-                <h2 className="text-white text-5xl font-bold">FORMA PARTE DE AQUELLOS QUE</h2>
-                <h2 className="text-yellow-500 text-5xl font-bold">CONQUISTAN SU FUTURO</h2>
-                <p className="text-neutral-400 font-bold pt-5 pb-5" >Aprende, trasciende y empieza a cumplir tus sueños.</p>
-                <button className="bg-yellow-500 p-3 font-bold rounded-md cursor-pointer hover:bg-yellow-400">
-                  PLANES Y BECAS
-                </button>
-                <Image
-                  className="pt-10"
-                  width={50}
-                  height={50}
-                  alt="Picture of the author"
-                  src={logoYeshiva}
-                />
-              </div>
-              <button className='absolute bottom-10 right-10 bg-yellow-500 hover:bg-yellow-400 rounded-full p-4 text-4xl cursor-pointer'>
-                <SiGoogleforms />
+          <div className="relative bg-slate-800">
+            <div className="grid place-items-center bg-[url(/img/pattern.svg)] bg-cover bg-center px-4 md:px-10 py-20 text-center">
+              <h2 className="text-white text-3xl sm:text-4xl md:text-5xl font-bold leading-tight">
+                FORMA PARTE DE AQUELLOS QUE
+              </h2>
+              <h2 className="text-yellow-500 text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mt-2">
+                CONQUISTAN SU FUTURO
+              </h2>
+              <p className="text-neutral-400 font-bold pt-4 pb-6 text-base sm:text-lg max-w-xl">
+                Aprende, trasciende y empieza a cumplir tus sueños.
+              </p>
+              <button className="bg-yellow-500 px-6 py-3 font-bold rounded-md cursor-pointer hover:bg-yellow-400 text-base sm:text-lg">
+                PLANES Y BECAS
               </button>
+              <Image
+                className="pt-10"
+                width={80}
+                height={80}
+                alt="Logo Yeshiva"
+                src={logoYeshiva}
+              />
             </div>
+            <button className="absolute bottom-5 right-5 sm:bottom-10 sm:right-10 bg-yellow-500 hover:bg-yellow-400 rounded-full p-3 sm:p-4 text-3xl sm:text-4xl cursor-pointer">
+              <SiGoogleforms />
+            </button>
+        </div>
         </>
     )
 }
