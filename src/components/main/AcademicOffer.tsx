@@ -2,60 +2,16 @@
 
 import SectionTitle from "../commons/SectionTitle";
 
-// import imageDoctor from '../../../public/img/medico.jpg'
-
 
 import InfiniteCarousel from "./InfiniteCarousel";
 
 const AcademicOffer = () =>{
     const academicOffer = ['Carreras', 'Cursos', 'Capacitaciones'];
-    // const initialCards = [
-    //   {
-    //     careerName: "Enfermeria",
-    //     description: "Licenciatura en auxiliar de enfermeria",
-    //     image: imageDoctor
-    //   },
-    //   {
-    //     careerName: "Emergencias y urgencias médicas",
-    //     description: "Técnico superior en emergencias y urgenc...",
-    //     image: imageDoctor
-    //   },
-    //   {
-    //     careerName: "Nombre carrera",
-    //     description: "Grado Academico",
-    //     image: imageDoctor
-    //   },
-    //   {
-    //     careerName: "Nombre carrera",
-    //     description: "Grado Academico",
-    //     image: imageDoctor
-    //   }
-    // ]
-    // const [current, setCurrent] = useState(0);
-    // const [cards, setCards] = useState(initialCards);
-    // const [isSliding, setIsSliding] = useState(false);
-
-    // const containerRef = useRef<HTMLDivElement>(null);
-
-    // useEffect(() => {
-    //   const interval = setInterval(() => {
-    //     setIsSliding(true);
-    //     //setCurrent((prev) => (prev === cards.length - 1 ? 0 : prev + 1));
-    //     setTimeout(() => {
-    //       setCards((prev)=>{
-    //         const [first, ...rest] = prev;
-    //         return [...rest, first];
-    //       });
-    //       setIsSliding(false); // Resetear la animación
-    //     }, 1000); // Tiempo igual al de la animación
-    //   }, 5000);
-    //   return () => clearInterval(interval);
-    // }, [])
-
+    
     return(
       <>
         
-        <div className="p-10">
+        <div className="mx-10">
           <SectionTitle size={4} title={'OFERTA ACADÉMICA'}/>
           {/* <div>
             <div className="relative inline-block">
