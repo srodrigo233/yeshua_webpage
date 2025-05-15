@@ -1,16 +1,38 @@
 import SectionTitle from "../commons/SectionTitle";
 
-const Thoughts = () =>{
-    return(
-        <div className="mx-10 mt-5">
-            <SectionTitle title="OPINIONES" size={4}/>
+const Thoughts = () => {
+  const thoughtsData = [
+    {
+      name: "María L.",
+      opinion: "El curso fue muy completo y los docentes explicaron todo con claridad.",
+    },
+    {
+      name: "Carlos M.",
+      opinion: "Una experiencia excelente. Muy recomendable para estudiantes de enfermería.",
+    },
+    {
+      name: "Lucía P.",
+      opinion: "Me ayudó a mejorar mis habilidades prácticas, sobre todo en urgencias.",
+    },
+  ];
 
-            <div className="flex flex-row mt-7">
-                <div className="basis-1/3 shadow-md h-50 rounded-2xl bg-neutral-100">
-                    
-                </div>
-            </div>
-        </div>
-    );
-}
+  return (
+    <div className="px-4 sm:px-6 md:px-10 mt-10 max-w-screen-xl mx-auto">
+      <SectionTitle title="OPINIONES" size={2} />
+
+      <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        {thoughtsData.map((item, index) => (
+          <div
+            key={index}
+            className="bg-neutral-100 p-6 rounded-2xl shadow-md h-full flex flex-col justify-between"
+          >
+            <p className="text-gray-700 text-base mb-4 italic">“{item.opinion}”</p>
+            <h4 className="text-blue-900 font-semibold text-sm">— {item.name}</h4>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
 export default Thoughts;
