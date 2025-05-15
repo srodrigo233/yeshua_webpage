@@ -7,7 +7,7 @@ interface CardProps {
   carDescription?: string;
   cardImage?: StaticImageData;
   date?: string;
-  variant: 'news' | 'otherNotices' | 'event'| 'beca';
+  variant: 'news' | 'otherNotices' | 'event'| 'beca'| 'newsmainpage';
 }
 
 const variantStyles = {
@@ -38,7 +38,15 @@ const variantStyles = {
     showDescription: false,
     showDate: false,
     showButton: true,
-  }
+  },
+  newsmainpage: {
+    height: 'h-75',
+    weight: 'w-150',
+    titleSize: 'text-xl',
+    showDescription: true,
+    showDate: false,
+    showButton: true,
+  },
 };
 
 const Card: FC<CardProps> = ({ cardTitle, carDescription, cardImage, date, variant }) => {
@@ -51,7 +59,7 @@ const Card: FC<CardProps> = ({ cardTitle, carDescription, cardImage, date, varia
   } = variantStyles[variant];
 
   return (
-    <div className={`relative p-3 m-3 rounded-2xl overflow-hidden shadow-1xl ${height}`}>
+    <div className={`relative p-3 m-2 rounded-2xl overflow-hidden shadow-1xl ${height}`}>
       {cardImage && (
         <Image
           fill

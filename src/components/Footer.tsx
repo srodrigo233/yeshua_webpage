@@ -30,7 +30,7 @@ const Footer = () => {
           <ul className="space-y-3 text-sm text-amber-300">
             {[
               { label: 'Eventos', href: 'events' },
-              { label: 'Noticias', href: '/noticias' },
+              { label: 'Noticias', href: 'notices' },
               { label: 'Contáctanos', href: 'info' },
             ].map(({ label, href }) => (
               <li key={label}>
