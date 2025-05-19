@@ -2,6 +2,8 @@ import SectionTitle from "../commons/SectionTitle";
 import Card from "../commons/Card";
 import { GoArrowRight } from "react-icons/go";
 import imageDoctor from '../../../public/img/medico.jpg';
+import Link from 'next/link';
+
 
 const newsData = [
   {
@@ -63,12 +65,14 @@ const News = () => {
         ))}
       </div>
 
-      <div className="flex items-center mt-8 gap-4">
-        <button className="bg-yellow-500 rounded-full p-3 text-2xl text-white hover:bg-yellow-600 transition">
-          <GoArrowRight />
-        </button>
-        <h2 className="font-bold text-blue-900 text-lg">Ir al blog de noticias</h2>
-      </div>
+      <Link href="/notices">
+        <div className="flex items-center mt-8 gap-4 cursor-pointer">
+          <button className="bg-yellow-500 rounded-full p-3 text-2xl text-white hover:bg-yellow-600 transition">
+            <GoArrowRight />
+          </button>
+          <h2 className="font-bold text-blue-900 text-lg">Ir al blog de noticias</h2>
+        </div>
+      </Link>
     </div>
   );
 };

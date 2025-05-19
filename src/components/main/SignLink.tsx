@@ -1,6 +1,7 @@
 import Image from "next/image";
 import logoYeshiva from '../../../public/logoYeshiva.svg'
 import { SiGoogleforms } from "react-icons/si";
+import Link from 'next/link';
 
 const SignLink = () =>{
     return (
@@ -16,9 +17,11 @@ const SignLink = () =>{
               <p className="text-neutral-400 font-bold pt-4 pb-6 text-base sm:text-lg max-w-xl">
                 Aprende, trasciende y empieza a cumplir tus sueños.
               </p>
+              <Link href="/academic">
               <button className="bg-yellow-500 px-6 py-3 font-bold rounded-md cursor-pointer hover:bg-yellow-400 text-base sm:text-lg">
                 PLANES Y BECAS
               </button>
+              </Link> 
               <Image
                 className="pt-10"
                 width={80}

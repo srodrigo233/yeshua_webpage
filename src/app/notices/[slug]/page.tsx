@@ -3,6 +3,7 @@ import SectionTitle from "@/components/commons/SectionTitle";
 import Card from "@/components/commons/Card";
 import articleImage from "../../../../public/img/artNotice.png";
 import { MdKeyboardDoubleArrowLeft } from "react-icons/md";
+import Link from "next/link";
 
 export default function ArticlePage() {
   const article = {
@@ -36,10 +37,12 @@ export default function ArticlePage() {
           
         {/* Columna principal: Artículo */}
         <div className="lg:w-2/3">
-            <div className="flex items-center text-slate-500 font-bold  text-xl cursor-pointer mb-6">
-              <MdKeyboardDoubleArrowLeft className="mr-2" />
-              Volver a Noticias
-            </div>
+            <Link href="/notices">
+              <div className="flex items-center text-slate-500 font-bold  text-xl cursor-pointer mb-6">
+                <MdKeyboardDoubleArrowLeft className="mr-2" />
+                Volver a Noticias
+              </div>
+            </Link>
             <h1 className="text-3xl font-bold text-left my-2">
             {article.title}
             </h1>

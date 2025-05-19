@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 import SectionTitle from '../commons/SectionTitle';
 import Image from 'next/image';
 import { GoArrowRight } from 'react-icons/go';
+import Link from 'next/link';
 
 import ilustration1 from '../../../public/img/ilustration1.png';
 import ilustration2 from '../../../public/img/ilustration2.png';
@@ -97,12 +98,14 @@ const Events = () => {
       </div>
 
       {/* Botón */}
-      <div className="flex items-center gap-4 mt-8">
-        <button className="bg-yellow-500 rounded-full p-3 text-2xl text-white hover:bg-yellow-600 transition">
-          <GoArrowRight />
-        </button>
-        <h2 className="font-bold text-blue-900 text-lg">Ir al calendario de eventos</h2>
-      </div>
+      <Link href="/events">
+        <div className="flex items-center gap-4 mt-8 cursor-pointer">
+          <button className="bg-yellow-500 rounded-full p-3 text-2xl text-white hover:bg-yellow-600 transition">
+            <GoArrowRight />
+          </button>
+          <h2 className="font-bold text-blue-900 text-lg">Ir al calendario de eventos</h2>
+        </div>
+      </Link>
     </div>
   );
 };

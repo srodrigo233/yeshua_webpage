@@ -4,6 +4,8 @@ import SectionTitle from "@/components/commons/SectionTitle";
 import Card from '@/components/commons/Card';
 import oferta1 from '../../../../public/academicOffers/academic.png';
 import { MdKeyboardDoubleArrowLeft } from "react-icons/md";
+import Link from "next/link";
+
 
 export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
@@ -93,11 +95,12 @@ const carreras = [
       <div className="max-w-7xl mx-auto px-4 py-10 flex flex-col lg:flex-row gap-10">
         {/* Columna izquierda */}
         <div className="lg:w-2/3">
-          <div className="flex items-center text-slate-500 font-bold text-xl cursor-pointer mb-6">
-            <MdKeyboardDoubleArrowLeft className="mr-2" />
-            Volver a la oferta académica
-          </div>
-
+          <Link href="/#oferta-academica">
+            <div className="flex items-center text-slate-500 font-bold text-xl cursor-pointer mb-6 hover:text-slate-700 transition">
+              <MdKeyboardDoubleArrowLeft className="mr-2" />
+              Volver a la oferta académica
+            </div>
+          </Link>
           {/* Info general */}
           <SectionTitle title={careerInfo.title} size={4} />
           <div className="mt-5 space-y-2 text-gray-800">
