@@ -46,10 +46,16 @@ const Footer = () => {
         <div>
           <h3 className="text-lg font-bold uppercase mb-6">Contáctanos</h3>
           <ul className="space-y-4 text-sm">
-            <li className="flex items-center gap-3">
+            <a
+              href="https://wa.me/59176420527"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-3 hover:text-yellow-400 transition"
+            >
               <FaPhoneAlt size={16} className="text-white" />
               <span>76420527</span>
-            </li>
+            </a>
+
             <li className="flex items-center gap-3">
               <FaEnvelope size={16} className="text-white" />
               <a
@@ -74,7 +80,6 @@ const Footer = () => {
               { icon: FaFacebookF, href: 'https://www.facebook.com' },
               { icon: FaInstagram, href: 'https://www.instagram.com' },
               { icon: FaTiktok, href: 'https://www.tiktok.com' },
-              { icon: FaLinkedinIn, href: 'https://www.linkedin.com' },
             ].map(({ icon: Icon, href }, idx) => (
               <a
                 key={idx}
