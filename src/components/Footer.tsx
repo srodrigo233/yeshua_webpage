@@ -1,109 +1,141 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import {
   FaFacebookF,
   FaInstagram,
-  FaLinkedinIn,
   FaTiktok,
   FaPhoneAlt,
   FaEnvelope,
   FaMapMarkerAlt,
 } from 'react-icons/fa';
 
-const Footer = () => {
-  return (
-    <footer className="bg-blue-950 text-white mt-12">
-      <div className="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
-        {/* Logo */}
-        <div className="flex items-start justify-start">
-          <Link href="/">
-            <img
-              src="/yeshivaLogoBlanco.svg"
-              alt="Logo del Instituto"
-              className="h-16 w-auto"
-            />
-          </Link>
-        </div>
+// --- Constantes para links y redes ---
+const SERVICES_LINKS = [
+  { label: 'Eventos', href: '/events' },
+  { label: 'Noticias', href: '/notices' },
+  { label: 'Contáctanos', href: '/info' },
+];
 
-        {/* Servicios */}
-        <div>
-          <h3 className="text-lg font-bold uppercase mb-6">Servicios</h3>
-          <ul className="space-y-3 text-sm text-amber-300">
-            {[
-              { label: 'Eventos', href: 'events' },
-              { label: 'Noticias', href: 'notices' },
-              { label: 'Contáctanos', href: 'info' },
-            ].map(({ label, href }) => (
-              <li key={label}>
-                <Link href={href} className="hover:underline">
-                  {label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
+const SOCIAL_LINKS = [
+  { icon: FaFacebookF, href: 'https://www.facebook.com/yeshivaisraelcochabamba', label: 'Facebook' },
+  { icon: FaInstagram, href: 'https://www.instagram.com/yeshivaisraelcochabamba', label: 'Instagram' },
+  { icon: FaTiktok, href: 'https://www.tiktok.com/@yeshivaisraelcochabamba', label: 'TikTok' },
+];
 
-        {/* Contacto y redes sociales */}
-        <div>
-          <h3 className="text-lg font-bold uppercase mb-6">Contáctanos</h3>
-          <ul className="space-y-4 text-sm">
+const CONTACTS = [
+  {
+    icon: FaPhoneAlt,
+    label: 'WhatsApp',
+    value: '76420527',
+    href: 'https://wa.me/59176420527',
+    isLink: true,
+  },
+  {
+    icon: FaEnvelope,
+    label: 'Email',
+    value: 'administración@shemayisrael.com',
+    href: 'mailto:administración@shemayisrael.com',
+    isLink: true,
+  },
+];
+
+const ADDRESS = {
+  icon: FaMapMarkerAlt,
+  label: 'Dirección',
+  value: (
+    <>
+      Torres América Norte, planta baja, of. 2<br />
+      Av. América entre Av. Pando y Av. M. Urquidi
+    </>
+  ),
+};
+
+// --- Componente principal ---
+const Footer = () => (
+  <footer className="bg-blue-950 text-white mt-12">
+    <div className="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+      {/* Logo */}
+      <div className="flex items-start justify-start">
+        <Link href="/" aria-label="Inicio">
+          <Image
+            src="/yeshivaLogoColor.svg"
+            alt="Logo del Instituto Yeshivá"
+            width={180}
+            height={64}
+            className="h-16 w-auto"
+            priority
+          />
+        </Link>
+      </div>
+
+      {/* Servicios */}
+      <nav aria-label="Servicios">
+        <h3 className="text-lg font-bold uppercase mb-6">Servicios</h3>
+        <ul className="space-y-3 text-sm text-amber-300">
+          {SERVICES_LINKS.map(({ label, href }) => (
+            <li key={label}>
+              <Link href={href} className="hover:underline">
+                {label}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </nav>
+
+      {/* Contacto y redes sociales */}
+      <div>
+        <h3 className="text-lg font-bold uppercase mb-6">Contáctanos</h3>
+        <ul className="space-y-4 text-sm">
+          {CONTACTS.map(({ icon: Icon, label, value, href, isLink }) => (
+            <li key={label} className="flex items-center gap-3">
+              <Icon size={16} className="text-white" aria-hidden="true" />
+              {isLink ? (
+                <a
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:underline"
+                  aria-label={label}
+                >
+                  {value}
+                </a>
+              ) : (
+                <span>{value}</span>
+              )}
+            </li>
+          ))}
+          <li className="flex items-start gap-3">
+            <ADDRESS.icon size={18} className="text-white mt-1" aria-hidden="true" />
+            <span>{ADDRESS.value}</span>
+          </li>
+        </ul>
+
+        {/* Redes Sociales */}
+        <div className="flex space-x-4 mt-6">
+          {SOCIAL_LINKS.map(({ icon: Icon, href, label }) => (
             <a
-              href="https://wa.me/59176420527"
+              key={label}
+              href={href}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-3 hover:text-yellow-400 transition"
+              aria-label={label}
+              className="text-blue-950 border border-yellow-400 bg-yellow-400 rounded-full p-2 hover:bg-yellow-500 hover:text-yellow-200 transition shadow-md"
             >
-              <FaPhoneAlt size={16} className="text-white" />
-              <span>76420527</span>
+              <Icon size={16} aria-hidden="true" />
             </a>
-
-            <li className="flex items-center gap-3">
-              <FaEnvelope size={16} className="text-white" />
-              <a
-                href="mailto:administración@shemayisrael.com"
-                className="hover:underline"
-              >
-                administración@shemayisrael.com
-              </a>
-            </li>
-            <li className="flex items-start gap-3">
-              <FaMapMarkerAlt size={18} className="text-white mt-1" />
-              <span>
-                Torres América Norte, planta baja, of. 2<br />
-                Av. América entre Av. Pando y Av. M. Urquidi
-              </span>
-            </li>
-          </ul>
-
-          {/* Redes Sociales */}
-          <div className="flex space-x-4 mt-6">
-            {[
-              { icon: FaFacebookF, href: 'https://www.facebook.com' },
-              { icon: FaInstagram, href: 'https://www.instagram.com' },
-              { icon: FaTiktok, href: 'https://www.tiktok.com' },
-            ].map(({ icon: Icon, href }, idx) => (
-              <a
-                key={idx}
-                href={href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-blue-950 border border-yellow-400 bg-yellow-400 rounded-full p-2 hover:bg-yellow-500 hover:text-yellow-200 transition"
-              >
-                <Icon size={16} />
-              </a>
-            ))}
-          </div>
+          ))}
         </div>
       </div>
+    </div>
 
-      {/* Línea divisora */}
-      <hr className="border-gray-600 w-[90%] mx-auto my-6" />
+    {/* Línea divisora */}
+    <hr className="border-gray-600 w-[90%] mx-auto my-6" />
 
-      {/* Derechos reservados */}
-      <div className="text-center text-sm text-gray-300 pb-6">
-        &copy; {new Date().getFullYear()} Instituto Yeshivá. Todos los derechos reservados.
-      </div>
-    </footer>
-  );
-};
+    {/* Derechos reservados */}
+    <div className="text-center text-sm text-gray-300 pb-6">
+      &copy; {new Date().getFullYear()} Instituto Yeshivá. Todos los derechos reservados.
+    </div>
+  </footer>
+);
 
 export default Footer;
