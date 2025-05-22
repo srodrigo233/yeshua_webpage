@@ -3,6 +3,9 @@ import SectionTitle from '@/components/commons/SectionTitle';
 import Card from '@/components/commons/Card';
 import evento1 from '../../../public/events/ImgEv.png';
 
+import Image from "next/image";
+import imageInfo from '../../../public/eventsBg.svg'
+
 const eventos = [
   {
     cardTitle: 'Curso práctico de inyectables',
@@ -27,11 +30,12 @@ const EventosPage = () => {
   return (
     <main className="text-gray-700">
       {/* Imagen de cabecera */}
-      <div className="w-full h-[60vh] overflow-hidden">
-        <img
-          src="/eventsBg.svg"
-          alt="Próximos eventos"
-          className="w-full h-full object-cover"
+      <div className="relative w-full h-[30vh] md:h-[50vh]">
+        <Image
+          alt="Portada"
+          src={imageInfo}
+          fill
+          className="object-cover brightness-50"
         />
       </div>
 

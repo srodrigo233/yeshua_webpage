@@ -1,6 +1,9 @@
 import React from 'react';
 import SectionTitle from '@/components/commons/SectionTitle';
 
+import Image from "next/image";
+import imageInfo from '../../../public/informationBg.svg'
+
 const contactInfo = {
   phone: '+591 77418638',
   email: 'administración@shemayisrael.com',
@@ -26,11 +29,12 @@ const InformacionPage = () => {
   return (
     <main className="text-gray-700">
       {/* Imagen de cabecera */}
-      <div className="w-full h-[60vh] overflow-hidden">
-        <img
-          src="/informationBg.svg"
-          alt="Información del Instituto"
-          className="w-full h-full object-cover"
+      <div className="relative w-full h-[30vh] md:h-[50vh]">
+        <Image
+          alt="Portada"
+          src={imageInfo}
+          fill
+          className="object-cover brightness-50"
         />
       </div>
 

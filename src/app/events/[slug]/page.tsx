@@ -4,6 +4,8 @@ import eventBanner from '../../../../public/img/eventBanner.png';
 import Card from "@/components/commons/Card";
 import eventPicture from '../../../../public/img/eventPicture.jpg';
 
+import imageInfo from '../../../../public/eventBg.svg'; // por ejemplo
+
 export default async function Page({ params }: { params: { slug: string } }) {
   const { slug } = await params;
 
@@ -49,7 +51,17 @@ export default async function Page({ params }: { params: { slug: string } }) {
   const classForTableSpacing = `w-full mb-2 border-separate border-spacing-y-3`;
 
   return (
-    <div className="max-w-5xl mx-auto px-4 py-8">
+    <>
+    {/* Imagen de cabecera (PORTADA) */}
+    <div className="relative w-full h-[30vh] md:h-[50vh]">
+          <Image
+            alt="Portada"
+            src={imageInfo}
+            fill
+            className="object-cover brightness-50"
+          />
+    </div>
+    <div className="max-w-5xl mx-auto px-4 pb-8 py-8">
 
       <div className="flex flex-col lg:flex-row gap-8">
         {/* Main event info */}
@@ -170,5 +182,6 @@ export default async function Page({ params }: { params: { slug: string } }) {
         </aside>
       </div>
     </div>
+    </>
   );
 }
