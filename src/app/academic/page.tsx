@@ -3,6 +3,9 @@ import SectionTitle from '@/components/commons/SectionTitle';
 import Card from '@/components/commons/Card';
 import oferta1 from '../../../public/academicOffers/academic.png';
 
+import Image from "next/image";
+import imageAcademic from '../../../public/academicBg.svg';
+
 const tecnicosSuperiores = [
   {
     cardTitle: 'Técnico Superior en Enfermería',
@@ -66,11 +69,12 @@ const OfertaAcademicaPage = () => {
   return (
     <main className="text-gray-700">
       {/* Imagen de cabecera */}
-      <div className="w-full h-[60vh] overflow-hidden">
-        <img
-          src="/academicBg.svg"
-          alt="Oferta académica"
-          className="w-full h-full object-cover"
+      <div className="relative w-full h-[30vh] md:h-[50vh]">
+        <Image
+          alt="Portada"
+          src={imageAcademic}
+          fill
+          className="object-cover brightness-50"
         />
       </div>
 

@@ -22,7 +22,7 @@ export default function Navbar() {
         {/* Logo */}
         <Link href="/">
           <img
-            src="/yeshivaLogoBlanco.svg"
+            src="/yeshivaLogoColor.svg"
             alt="Logo del Instituto"
             className="h-10 w-auto"
           />

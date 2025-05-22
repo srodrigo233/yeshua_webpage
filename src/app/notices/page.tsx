@@ -5,6 +5,9 @@ import Card from '@/components/commons/Card';
 import noticiaImg from '../../../public/notices/news.png';
 import { TfiControlForward, TfiControlBackward } from "react-icons/tfi";
 
+import Image from "next/image";
+import imageNotices from '../../../public/newsBg.svg'
+
 const loMasReciente = [
   {
     cardTitle: 'Nuevo convenio con hospital regional',
@@ -138,11 +141,12 @@ const NoticiasPage = () => {
   return (
     <main className="text-gray-700">
       {/* Imagen de cabecera */}
-      <div className="w-full h-[60vh] overflow-hidden">
-        <img
-          src="/newsBg.svg"
-          alt="Noticias"
-          className="w-full h-full object-cover"
+      <div className="relative w-full h-[30vh] md:h-[50vh]">
+        <Image
+          alt="Portada"
+          src={imageNotices}
+          fill
+          className="object-cover brightness-50"
         />
       </div>
 

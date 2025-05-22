@@ -5,33 +5,46 @@ import articleImage from "../../../../public/img/artNotice.png";
 import { MdKeyboardDoubleArrowLeft } from "react-icons/md";
 import Link from "next/link";
 
+import imageArtNotice from '../../../../public/artNoticeBg.svg'
+
 export default function ArticlePage() {
   const article = {
     title: "YESHIVA: Futuros Médicos y Enfermeros Maestros en Sutura",
     publishedAt: new Date(2024, 2, 14),
     content: `Cochabamba, Bolivia – El pasado 28 de febrero, el Instituto Tecnológico Alianza YESHIVA se convirtió en el epicentro del aprendizaje práctico para estudiantes de medicina y enfermería, al llevar a cabo la primera edición de su esperado curso de suturas.
-    Bajo la experta guía del Doctor Eduardo Gamboa y la Doctora Vinna Park, los participantes se sumergieron en una jornada intensiva de 4 horas académicas, dividida en dos turnos para garantizar una experiencia personalizada. El objetivo: dominar las técnicas de sutura, un pilar fundamental en la práctica médica.
-    El ambiente estaba cargado de expectación y entusiasmo. Los estudiantes, equipados con hilos, agujas y simuladores de última generación, practicaron cada puntada bajo la atenta mirada de los instructores. Desde los conceptos básicos de la sutura hasta los protocolos de asepsia y los cuidados postoperatorios, ningún detalle quedó sin explorar.
-    "Fue una experiencia invaluable", comentó María López, estudiante de medicina. "La claridad con la que los doctores explicaron cada paso y la oportunidad de practicar en un entorno controlado nos dio la confianza que necesitábamos".
-    La valoración del curso no pudo ser más positiva. Los asistentes destacaron el enfoque práctico y la claridad de los expositores, resaltando la importancia de este tipo de formación en su preparación para enfrentar los desafíos del mundo real.
-    "En YESHIVA, creemos firmemente en la educación práctica", afirmó el Director del Instituto. "Por eso, continuaremos ofreciendo cursos que fortalezcan las habilidades de nuestros estudiantes en áreas clave de la salud".
-    Desde el manejo de inyectables hasta los primeros auxilios y la electrocardiografía básica, YESHIVA se compromete a brindar a sus estudiantes las herramientas necesarias para destacar en sus futuras carreras.
-    Con este curso de suturas, YESHIVA reafirma su compromiso con la excelencia en la educación médica y se consolida como un referente en la formación de profesionales de la salud altamente capacitados.
+
+Bajo la experta guía del Doctor Eduardo Gamboa y la Doctora Vinna Park, los participantes se sumergieron en una jornada intensiva de 4 horas académicas, dividida en dos turnos para garantizar una experiencia personalizada. El objetivo: dominar las técnicas de sutura, un pilar fundamental en la práctica médica.
+
+El ambiente estaba cargado de expectación y entusiasmo. Los estudiantes, equipados con hilos, agujas y simuladores de última generación, practicaron cada puntada bajo la atenta mirada de los instructores. Desde los conceptos básicos de la sutura hasta los protocolos de asepsia y los cuidados postoperatorios, ningún detalle quedó sin explorar.
+
+"Fue una experiencia invaluable", comentó María López, estudiante de medicina. "La claridad con la que los doctores explicaron cada paso y la oportunidad de practicar en un entorno controlado nos dio la confianza que necesitábamos".
+
+La valoración del curso no pudo ser más positiva. Los asistentes destacaron el enfoque práctico y la claridad de los expositores, resaltando la importancia de este tipo de formación en su preparación para enfrentar los desafíos del mundo real.
+
+"En YESHIVA, creemos firmemente en la educación práctica", afirmó el Director del Instituto. "Por eso, continuaremos ofreciendo cursos que fortalezcan las habilidades de nuestros estudiantes en áreas clave de la salud".
+
+Desde el manejo de inyectables hasta los primeros auxilios y la electrocardiografía básica, YESHIVA se compromete a brindar a sus estudiantes las herramientas necesarias para destacar en sus futuras carreras.
+
+Con este curso de suturas, YESHIVA reafirma su compromiso con la excelencia en la educación médica y se consolida como un referente en la formación de profesionales de la salud altamente capacitados.
 `,
     image: articleImage,
     authorText: "Brenda Torres Mendoza",
     authorPhoto: "Jose Luis Aguilera Sarmiento",
   };
 
+  // Procesa los párrafos usando split por doble salto de línea
+  const paragraphs = article.content.split(/\n\s*\n/);
+
   return (
     <>
       {/* Imagen de cabecera en ancho completo */}
-        <div className="w-full h-[60vh]">
-        <img
-          src="/artNoticeBg.svg"
-          alt="Noticias"
-          className="w-full h-full object-cover"
-        />
+        <div className="relative w-full h-[30vh] md:h-[50vh]">
+          <Image
+            alt="Portada"
+            src={imageArtNotice}
+            fill
+            className="object-cover brightness-50"
+          />
         </div>
         <div className="max-w-6xl mx-auto px-4 py-10 flex flex-col lg:flex-row gap-8">
           
@@ -63,7 +76,7 @@ export default function ArticlePage() {
             <Image
             src={article.image}
             alt="Imagen del artículo"
-            className="my-6 rounded-lg"
+            className="my-6 w-auto rounded-lg"
             />
 
             {/* Autores */}
