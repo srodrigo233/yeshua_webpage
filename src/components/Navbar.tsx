@@ -10,6 +10,7 @@ const navItems = [
   { name: 'Oferta Académica', href: '/academic' },
   { name: 'Noticias', href: '/notices' },
   { name: 'Información', href: '/info' },
+  { name: 'Login', href: '/login' },
 ];
 
 export default function Navbar() {
