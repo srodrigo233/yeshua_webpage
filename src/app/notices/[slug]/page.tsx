@@ -5,7 +5,7 @@ import articleImage from "../../../../public/img/artNotice.png";
 import { MdKeyboardDoubleArrowLeft } from "react-icons/md";
 import Link from "next/link";
 
-import imageArtNotice from '../../../../public/artNoticeBg.svg'
+import imageArtNotice from '../../../../public/ArtNoticeBg.svg'
 
 export default function ArticlePage() {
   const article = {
